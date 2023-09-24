@@ -11,5 +11,5 @@ jobs:
       - name: Echo repo name
         run: |
           echo $GITHUB_SHA
-          ECHO $GITHUB_REF
+          echo $GITHUB_REF
       - uses: actions/checkout@v3
