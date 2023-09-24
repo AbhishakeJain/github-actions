@@ -1,8 +1,8 @@
 name: Repositiry Events
-on:
-  push
-  pull_request
-  issues
+on: 
+  push:
+  pull_request:
+  issues:
 
 jobs:
   checkout-test:
