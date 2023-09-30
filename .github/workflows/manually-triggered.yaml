@@ -41,3 +41,17 @@ jobs:
           echo "Option: ${{ inputs.option }}"
           echo "Boolean: ${{ inputs.boolean }}"
           echo "Environment: ${{ inputs.environment }}" 
+
+# To trigger workflow from postman
+#           https://api.github.com/repos/AbhishakeJain/github-actions/actions/workflows/manually-triggered.yaml/dispatches
+
+#           {
+#             "ref": "main",
+#             "inputs":{
+#                 "string": "from postman API",
+#                 "environment": "production",
+#                 "number": "17",
+#                 "option": "Option 1"
+#             }
+#         }          
+
