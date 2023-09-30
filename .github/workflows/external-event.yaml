@@ -4,7 +4,6 @@ on:
         types:
           - build
           - on-demand
-     
 jobs:
   echo-a-string:
     runs-on: ubuntu-latest
