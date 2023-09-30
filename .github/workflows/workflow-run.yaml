@@ -1,0 +1,11 @@
+name: Workflow Run
+on:
+  workflow_run:
+    workflows: [Repositiry Events]
+    types: [completed]
+jobs:
+  ecoho-string:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echi "I was triggered because 'Repository Events' was compelted"
+        
