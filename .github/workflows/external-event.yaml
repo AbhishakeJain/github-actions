@@ -1,0 +1,23 @@
+name: External Event
+on:
+    repository_dispatch: #should be in default branch
+     
+jobs:
+  echo-a-string:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Repo Disptach"  
+      
+# To trigger workflow from postman
+#           https://api.github.com/repos/AbhishakeJain/github-actions/actions/workflows/manually-triggered.yaml/dispatches
+
+#           {
+#             "ref": "main",
+#             "inputs":{
+#                 "string": "from postman API",
+#                 "environment": "production",
+#                 "number": "17",
+#                 "option": "Option 1"
+#             }
+#         }          
+
