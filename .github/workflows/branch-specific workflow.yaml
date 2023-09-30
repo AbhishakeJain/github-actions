@@ -1,0 +1,31 @@
+name: Branch specific work flow
+on: 
+  push:
+    branches:
+      - main
+      - develop
+      - "feature/*" # match feature/nameofbranch
+      - "!feature/featureA" # this branch will be ignored
+  #  branches-ignore: can not use both branches and branches-ignore
+  #    - main  
+    tags:
+      - v1.* #matched v1.1, v1.1.2
+      - '!v1.1.1' #ignore this tag
+    paths:
+      - "**.js"
+      - "!app.js"   #ignore the app.js files  All of these filters should match to run  
+  pull_request:
+    types: [opened, assigned, reopened, synchronize]
+    branches:
+        - develop
+  issues:
+    types: [opened]
+jobs:
+  brach-specific:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo repo name
+        run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REF
+      - uses: actions/checkout@v3

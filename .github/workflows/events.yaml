@@ -2,7 +2,7 @@ name: Repositiry Events
 on: 
   push:
   pull_request:
-    types: [open, assigned, reopened, synchronize]
+    types: [opened, assigned, reopened, synchronize]
   issues:
     types: [opened]
 jobs:
