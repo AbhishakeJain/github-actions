@@ -1,8 +1,8 @@
 name: Workflow Run
 on:
   workflow_run:
-    workflows: Repositiry Events
-    types: completed
+    workflows: [Repositiry Events]
+    types: [completed]
 jobs:
   echo-string:
     runs-on: ubuntu-latest
