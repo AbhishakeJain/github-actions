@@ -1,11 +1,10 @@
 name: Workflow Run
 on:
   workflow_run:
-    workflows: [Repositiry Events]
-    types: [completed]
+    workflows: Repositiry Events
+    types: completed
 jobs:
-  ecoho-string:
+  echo-string:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "I was triggered because 'Repository Events' was compelted"
-        
+      - run: echo "I was triggered because 'Repository Events' was compelted."
