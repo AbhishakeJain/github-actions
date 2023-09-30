@@ -1,23 +1,21 @@
 name: External Event
 on:
-    repository_dispatch: #should be in default branch
+    repository_dispatch: #should be in default branch, this supports activity types 
+        types:
+          - build
+          - on-demand
      
 jobs:
   echo-a-string:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Repo Disptach"  
+      - run: echo ${{ github.event.client_payload.unit}}  
       
 # To trigger workflow from postman
-#           https://api.github.com/repos/AbhishakeJain/github-actions/actions/workflows/manually-triggered.yaml/dispatches
-
-#           {
-#             "ref": "main",
-#             "inputs":{
-#                 "string": "from postman API",
-#                 "environment": "production",
-#                 "number": "17",
-#                 "option": "Option 1"
-#             }
-#         }          
-
+# https://api.github.com/repos/AbhishakeJain/github-actions/dispatches
+# {
+#     "event_type":"on-demand-test",
+#     "client_payload":{ # client payload is to send additional data
+#         "unit":false,
+#         "integration":true}
+# }
