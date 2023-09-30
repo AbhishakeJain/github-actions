@@ -7,5 +7,5 @@ jobs:
   ecoho-string:
     runs-on: ubuntu-latest
     steps:
-      - run: echi "I was triggered because 'Repository Events' was compelted"
+      - run: echo "I was triggered because 'Repository Events' was compelted"
         
