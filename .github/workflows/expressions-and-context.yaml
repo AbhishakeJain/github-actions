@@ -5,6 +5,7 @@ run-name: "Expressions & Contexts by @${{github.actor}}, and event is ${{github.
 jobs:
   using-expression-and-contexts:
     runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
     steps:
       - name: Expressions
         id: expression
