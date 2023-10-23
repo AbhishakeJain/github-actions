@@ -7,6 +7,9 @@ jobs:
     steps:
       - name: Step 1
         run: sleep 20
+        # explicitly failing the job
+      - name: Fail
+        run: exit 1  
       - name: Runs on failure
         # only run if job is failed
         if: failure()
