@@ -8,12 +8,17 @@ jobs:
       - name: Step 1
         run: sleep 20
         # explicitly failing the job
-      - name: Fail
+      - name: Step 2
+        id: step-2
         run: exit 1  
-      - name: Runs on failure
+    # - name: Runs on failure
         # only run if job is failed
-        if: failure()
-        run: echo 'Runs only on failure'
+    #   #if: failure()
+    #   run: echo 'Runs only on failure'
+    #   run when specific step is only failed
+      - name: Runs on Failure
+        if: failure() && steps.step-2.conclusion == 'failure'
+        run: echo 'Step 2 has failed'
       - name: Runs on Success
         # this is not needed as default behavious
         if: success()
